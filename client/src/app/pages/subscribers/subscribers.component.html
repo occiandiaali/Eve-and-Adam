@@ -1,0 +1,24 @@
+<div style="width: 100%;height: 320px;border-radius: 16px; background-color: rgb(252, 228, 228);">
+    <img src="https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/1.png" alt="banner pic" style="width: 100%;height: 240px;object-fit: contain;" />
+    </div>
+    <section>
+        <div style="display: flex;margin: 12px; flex-direction: row;justify-content: space-between;">
+            <span style="font-size: larger;font-weight: 800;">New faces</span>
+            <span style="color: rgb(128, 51, 23);">See all</span>
+        </div>
+        <div class="row1">
+            @if (newFaces$ | async; as new_faces) {
+                @for (face of new_faces; track face.id) {
+                    <app-subscriber-card 
+                    image={{face.image}}
+                    username={{face.username}}
+                    age={{face.age}}
+                    ></app-subscriber-card>
+                } @empty {
+                    <p style="padding-left: 24px;color: purple;font-weight: 800;">No results yet!</p>
+                }
+            } @else {
+                <p style="padding-left: 24px;color: red;font-weight: 800;">Loading listing..</p>
+            }
+        </div>
+    </section>

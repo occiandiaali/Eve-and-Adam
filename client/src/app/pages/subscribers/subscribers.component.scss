@@ -1,0 +1,22 @@
+.row1 {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-width: none;
+    margin-bottom: 4%;
+
+}
+.row1::-webkit-scrollbar {
+    display: none;
+}
+
+.scrolling-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+
+}
+.scrolling-wrapper::-webkit-scrollbar {
+    display: none;
+}
